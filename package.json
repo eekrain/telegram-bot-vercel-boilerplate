@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "author": "Mark Pavlov (https://github.com/sollidy)",
   "homepage": "https://github.com/sollidy/telegram-bot-vercel-boilerplate",
+  "type": "module",
   "dependencies": {
     "@vercel/node": "^3.0.28",
     "dotenv-cli": "^7.4.1",
@@ -21,7 +22,7 @@
     "typescript": "^5.4.5"
   },
   "scripts": {
-    "dev": "DEBUG=bot* dotenv -- nodemon -e ts -x ts-node src/index.ts",
+    "dev": "DEBUG=bot* bun run --watch src/index.ts",
     "devWindows": "@powershell -Command $env:DEBUG='bot*';dotenv -- -- nodemon -e ts -x ts-node src/index.ts",
     "build": "ncc build src/index.ts -o public -m",
     "prettier": "prettier --write 'src/**/*.ts'",
